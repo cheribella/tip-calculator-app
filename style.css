@@ -346,8 +346,8 @@ footer .attribution a {
   }
 
   #tip-calculator .calculator form input:not(.tip) {
-    display: grid;
-    max-width: 32.1rem;
+    display: block;
+    max-width: 32rem;
   }
 
   .tip-percent-container {
@@ -382,5 +382,20 @@ footer .attribution a {
 @media (min-width: 400px) and (max-width: 789px) {
   #tip-calculator {
     max-width: 400px;
+  }
+}
+
+@media (min-width:790px) and (max-width: 959px) {
+  #tip-calculator {
+    max-width: 796px;
+  }
+
+  #tip-calculator .calculator {
+    max-width: 30rem;
+  }
+
+  #tip-calculator .calculator form input:not(.tip) {
+    display: block;
+    width: 21.1rem;
   }
 }
