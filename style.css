@@ -77,6 +77,7 @@ h6 {
 
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
+  --matte-black: #28282B;
 
   /**Dark Mode**/
   --very-dark-purple: #251b37;
@@ -84,7 +85,9 @@ h6 {
   --ash-purple: #827396;
   --very-light-purple: #e5e2e8;
   --purple: #614980;
-  --lavender: #ad92d1;
+  --lavender: #A090B6;
+  --pastel-pink: #FFCACA;
+  --heavenly-pink: #EBC4CA;
 
   /**Error**/
   --rose: #ff667e;
@@ -184,6 +187,7 @@ body {
 #tip-calculator .calculator form label {
   color: var(--very-dark-cyan);
   margin-bottom: 0.6rem;
+  cursor: auto;
 }
 
 #tip-calculator .calculator form input {
@@ -331,6 +335,82 @@ footer .attribution {
 footer .attribution a {
   color: var(--dark-grayish-cyan);
 }
+
+/**DARK MODE**/
+body.night-mode {
+  background: var(--dark-purple);
+}
+
+#tip-calculator.night-mode {
+  background: var(--very-dark-purple);
+}
+
+#tip-calculator.night-mode .calculator form label {
+  color: var(--very-light-purple);
+}
+
+.tip-percent-container.night-mode .tip-percent-content button {
+  background-color: var(--ash-purple);
+  background-image: var(--ash-purple);
+  background-image: linear-gradient(var(--dark-purple) 0%,var(--dark-purple) 100%); 
+  background-size: 300px;
+  background-repeat: no-repeat;
+  background-position: 0%;
+  color: var(--white);
+  cursor: pointer;
+  transition: background .5s ease-in-out, color .5s ease;
+}
+
+.tip-percent-container.night-mode .tip-percent-content button:hover {
+  background-position: -200%;
+  color: var(--pastel-pink);
+  transition: background .5s ease-in-out, color .5s ease;
+}
+
+#tip-calculator.night-mode .calculator form input {
+  border: 2px solid var(--very-light-purple);
+  background: var(--very-light-purple);
+}
+
+#tip-calculator.night-mode .calculator form input:focus {
+  border: 2px solid var(--ash-purple);
+}
+
+.result.night-mode .result-container {
+  background: var(--dark-purple);
+}
+
+.result.night-mode .result-container .title {
+  color: var(--heavenly-pink);
+}
+
+.result.night-mode .result-container .title span {
+  color: var(--ash-purple);
+}
+
+.result.night-mode .result-container .price {
+  color: var(--lavender);
+}
+
+.result.night-mode .result-container button {
+  background: var(--very-dark-purple);
+  color: var(--very-light-purple);
+}
+
+.result.night-mode .result-container button:hover {
+  background: var(--purple);
+  color: var(--pastel-pink);
+}
+
+footer .attribution.night-mode {
+  color: var(--white);
+}
+
+footer .attribution.night-mode a {
+  color: var(--heavenly-pink);
+}
+
+/**RESPONSIVE**/
 
 @media (min-width: 790px) {
   #tip-calculator {
