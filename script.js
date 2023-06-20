@@ -47,6 +47,8 @@ toggleSwitch.addEventListener("change", () => {
 });
 
 $resetBtn.disabled = true;
+$resultTip.innerText = "0.00";
+$resultTotal.innerText = "0.00";
 //Reset all values
 $resetBtn.addEventListener("click", () => {
   $resetBtn.disabled = true;
@@ -121,17 +123,24 @@ function calculate() {
   const billAmount = parseFloat($bill.value);
   const numberOfPeople = parseFloat($numberOfPeople.value);
 
-  let totalPerPerson =
-    (billAmount + billAmount * tipPercentage) / numberOfPeople;
-  let tipPerPerson = (billAmount / numberOfPeople) * tipPercentage;
-  totalPerPerson = totalPerPerson.toFixed(2);
-  tipPerPerson = tipPerPerson.toFixed(2);
+  if (isNaN(billAmount) || isNaN(numberOfPeople)) {
+    // Input values are not valid numbers
+    $resultTip.innerText = "0.00";
+    $resultTotal.innerText = "0.00";
+  } else {
+    // Calculate and display the results
+    let totalPerPerson =
+      (billAmount + billAmount * tipPercentage) / numberOfPeople;
+    let tipPerPerson = (billAmount / numberOfPeople) * tipPercentage;
+    totalPerPerson = totalPerPerson.toFixed(2);
+    tipPerPerson = tipPerPerson.toFixed(2);
 
-  $resultTip.innerText = tipPerPerson;
-  $resultTotal.innerText = totalPerPerson;
+    $resultTip.innerText = tipPerPerson;
+    $resultTotal.innerText = totalPerPerson;
+  }
 
-  console.log(totalPerPerson);
-  console.log(tipPerPerson);
+  console.log($resultTotal.innerText);
+  console.log($resultTip.innerText);
   console.log(tipPercentage);
 }
 
