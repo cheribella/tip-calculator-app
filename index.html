@@ -66,14 +66,14 @@
             <div class="tip-percent-container parent">
               <label>Select Tip %</label>
               <div class="tip-percent-content">
-                <button class="tip">5%</button>
-                <button class="tip">10%</button>
-                <button class="tip">15%</button>
-                <button class="tip">25%</button>
-                <button class="tip">50%</button>
+                <button class="tip tip-button" type="button" value="0.05">5%</button>
+                <button class="tip tip-button" type="button" value="0.10">10%</button>
+                <button class="tip tip-button" type="button" value="0.15">15%</button>
+                <button class="tip tip-button" type="button" value="0.25">25%</button>
+                <button class="tip tip-button" type="button" value="0.50">50%</button>
                 <input
                   type="text"
-                  class="tip"
+                  class="tip tip-custom"
                   placeholder="Custom"
                   pattern="[0-9]"
                   max="100"
@@ -113,19 +113,19 @@
               <div class="title">
                 <p>Tip Amount <span>/ person</span></p>
               </div>
-              <div class="tip-amount-price">
-                <p class="price">$0.00</p>
+              <div>
+                <p class="price tip-amount-price">$0.00</p>
               </div>
             </div>
             <div class="total-amount">
               <div class="title">
                 <p>Total <span>/ person</span></p>
               </div>
-              <div class="total-amount-price">
-                <p class="price">$0.00</p>
+              <div>
+                <p class="price total-amount-price">$0.00</p>
               </div>
             </div>
-            <button type="reset" disabled>Reset</button>
+            <button type="reset" id="reset">Reset</button>
           </div>
         </div>
       </article>

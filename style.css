@@ -249,10 +249,18 @@ body {
   box-sizing: border-box;
 }
 
-.tip-percent-container .tip-percent-content button.tip:hover {
+.tip-percent-container .tip-percent-content button.tip:hover,
+.tip-percent-container .tip-percent-content button.tip:focus,
+.tip-percent-container .tip-percent-content button.tip:active {
   background-position: -200%;
   color: var(--black);
   transition: background .5s ease-in-out, color .5s ease;
+}
+
+.tip-percent-container .tip-percent-content button.tip:hover .active,
+.tip-percent-container .tip-percent-content button.tip:focus .active,
+.tip-percent-container .tip-percent-content button.tip:active .active {
+  background: var(--light-grayish-cyan);
 }
 
 .tip-percent-container .tip-percent-content .tip {
@@ -262,6 +270,13 @@ body {
 
   max-width: 10rem;
 }
+
+#tip-calculator .calculator form .number-of-people .border-error {
+  border: 2px solid var(--rose);
+}
+/* #tip-calculator.night-mode .calculator form input.number-of-people .border-error {
+  border: 2px solid var(--rose);
+} */
 
 .label {
   display: flex;
@@ -326,20 +341,21 @@ body {
   transition: background 300ms ease;
 }
 
-.result .result-container button[type="reset"]:hover {
+.result .result-container button[type="reset"] .reset-active {
+  background: var(--strong-cyan);
+  color: var(--matte-black);
+}
+
+.result .result-container button[type="reset"] .reset-active:hover {
   color: var(--very-dark-cyan);
   background: var(--light-grayish-cyan);
 }
 
-.result .result-container button[type="reset"]:disabled,  
-.result .result-container button[disabled] {
+.result .result-container button[type="reset"]:disabled {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
   filter: brightness(55%);
   cursor: not-allowed;
-}
-
-.result .result-container button[disabled]:hover {
-  background: var(--strong-cyan);
-  color: var(--matte-black);
 }
 
 footer .attribution {
@@ -382,6 +398,10 @@ body.night-mode {
   transition: background .5s ease-in-out, color .5s ease;
 }
 
+.tip-percent-container .tip-percent-content button.tip .active {
+  background: var(--ash-purple);
+}
+
 #tip-calculator.night-mode .calculator form input {
   border: 2px solid var(--very-light-purple);
   background: var(--very-light-purple);
@@ -413,13 +433,12 @@ body.night-mode {
   cursor: pointer;
 }
 
-.result.night-mode .result-container button[type="reset"]:hover {
+.result.night-mode .result-container button[type="reset"] .reset-active:hover {
   background: var(--purple);
   color: var(--pastel-pink);
 }
 
-.result.result.night-mode .result-container button[type="reset"]:disabled,  
-.result.night-mode .result-container button[disabled] {
+.result.result.night-mode .result-container button[type="reset"]:disabled {
   background: var(--very-dark-purple);
   color: var(--dark-purple);
   cursor: not-allowed;
